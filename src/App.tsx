@@ -8,6 +8,7 @@ import { Genre } from './hooks/useGenres';
 import PlatformSelector from './components/PlatformSelector';
 import { Platform } from './hooks/usePlatforms';
 import SortSelector from './components/SortSelector';
+import GameHeading from './components/GameHeading';
 
 export interface GameQuery {
 	genre: Genre | null;
@@ -43,8 +44,9 @@ function App() {
 					/>
 				</GridItem>
 			</Show>
-			<GridItem area="main">
-				<Flex paddingLeft={2} marginBottom={5}>
+			<GridItem area="main" paddingLeft={5}>
+				<GameHeading gameQuery={gameQuery} />
+				<Flex marginBottom={5}>
 					<Box marginRight={5}>
 						<PlatformSelector
 							selectedPlatform={gameQuery.platform}
